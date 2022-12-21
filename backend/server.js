@@ -14,7 +14,7 @@ var cors = require('cors');
 
 // cors policy
 app.use(cors({
-    origin: 'https://share-now-file-sharing-app.vercel.app', // use your actual domain name (or localhost), using * is not recommended
+    origin: ['https://share-now-backend.vercel.app/https://share-now-file-sharing-app.vercel.app/', 'https://share-now-backend.vercel.app/http://localhost:4200'], // use your actual domain name (or localhost), using * is not recommended
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true

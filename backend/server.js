@@ -10,16 +10,15 @@ connectDB();
 var cors = require('cors');
 
 // use it before all route definitions
-app.use(cors({ origin: ['https://share-now-backend-gi2ea360d-varun21vaidya.vercel.app', 'https://share-now-file-sharing-app.vercel.app', 'https://share-now-backend-gi2ea360d-varun21vaidya.vercel.app/api/files'] }));
+// app.use(cors({ origin: ['https://share-now-backend-gi2ea360d-varun21vaidya.vercel.app', 'https://share-now-file-sharing-app.vercel.app', 'https://share-now-backend-gi2ea360d-varun21vaidya.vercel.app/api/files'] }));
 
 // cors policy
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
+app.use(cors({
+    origin: 'https://share-now-file-sharing-app.vercel.app/', // use your actual domain name (or localhost), using * is not recommended
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
+    credentials: true
+}))
 
 
 app.use(express.json());

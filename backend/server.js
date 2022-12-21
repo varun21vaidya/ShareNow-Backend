@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
 var cors = require('cors');
 
 // use it before all route definitions
-app.use(cors({ origin: ['https://share-now-backend-gi2ea360d-varun21vaidya.vercel.app/', 'https://share-now-file-sharing-app.vercel.app/'] }));
+app.use(cors({ origin: ['https://share-now-backend-gi2ea360d-varun21vaidya.vercel.app/', 'https://share-now-file-sharing-app.vercel.app/', 'https://share-now-backend-gi2ea360d-varun21vaidya.vercel.app/api/files'] }));
 
 app.use(express.json());
 

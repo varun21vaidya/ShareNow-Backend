@@ -16,7 +16,7 @@ body {
   align-items: center;
 }
 
-.upload-container {
+.container {
   background-color: white;
   border-radius: 30px;
   box-shadow: 0px 15px 30px 5px rgba(0, 0, 0, 0.2);
@@ -26,7 +26,6 @@ body {
   width: 300px;
   height: 300px;
   margin: 30px;
-  border: 2px dashed rgba(0, 153, 255, 0.788);
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -46,6 +45,7 @@ body {
   margin-top: 20px;
   padding: 12px 30px;
   cursor: pointer;
+  border-radius: 20px;
 }
 .send-btn-container a {
   text-decoration: none;

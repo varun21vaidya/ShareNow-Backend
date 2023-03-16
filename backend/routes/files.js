@@ -58,7 +58,8 @@ router.post('/', (req, res) => {
         // response will give download link
 
         // save this with await while upload is async
-        const response = await file.save();
+        await file.ensureIndex({ "createdAt": 1 }, { expireAfterSeconds: 120 })
+        const response = await file.save({ "createdAt": new Date() });
         res.json({ file: `${process.env.APP_BASE_URL}/files/${response.uuid}` });
         // download link will look like
         // http://localhost:3000/files/234dfhsebrg-2342dvsdvsdk
